@@ -1,0 +1,13 @@
+url: https://www.saucedemo.com/
+browser: chromium
+
+username:
+    std: standard_user
+    lck: locked_out_user
+    prb: problem_user
+    perf: performance_glitch_user
+    err: error_user
+    vis: visual_user
+password: secret_sauce
+
+wait_time: 15
