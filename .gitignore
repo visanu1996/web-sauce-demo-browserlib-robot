@@ -3,3 +3,6 @@ reports/combine/*
 reports/inform/*
 reports/login/*
 reports/products/*
+*.xml
+*.txt
+*.log
