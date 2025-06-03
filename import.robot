@@ -3,16 +3,17 @@ Library    Browser
 Library    String
 Library    Collections
 
+# config files
 Variables    conf/config.yml
 
 
-# Keyword files
+# Common Keyword file
 Resource    resource/keywords/common.resource
-Resource    resource/keywords/product.resource
-Resource    resource/keywords/cart.resource
-Resource    resource/keywords/checkout.resource
-# Locator files
-Resource    resource/locator/login.resource
-Resource    resource/locator/products.resource
-Resource    resource/locator/cart.resource
-Resource    resource/locator/checkout.resource
+
+
+# POM files
+Resource    resource/POM/checkout_page.resource
+Resource    resource/POM/product_page.resource
+Resource    resource/POM/cart_page.resource
+Resource    resource/POM/login_page.resource
+
