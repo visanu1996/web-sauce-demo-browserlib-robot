@@ -9,6 +9,10 @@ install [Browser](https://robotframework-browser.org/#installation) library
 ```bash
 pip install robotframework-browser
 ```
+then
+```bash
+rfbrowser init
+```
 website for test [saucedemo](https://www.saucedemo.com/)
 
 ## Usage

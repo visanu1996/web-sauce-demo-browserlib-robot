@@ -6,26 +6,6 @@ Element is Visible
     IF    not ${is_visible}    Fail
     RETURN    ${is_visible}
 
-Login User
-    [Documentation]    login with username and password
-    [Arguments]    ${user}    ${pass}
-    Fill Text    ${username_input}    ${user}
-    Fill Text    ${password_input}    ${pass}
-    Sleep    1
-    Click    ${submit_btn}
-
-Check Error Msg
-    [Documentation]    to check error message
-    ${error}    Get Text    ${error_msg}
-    RETURN    ${error}
-
-Logout
-    [Documentation]    use this keyword to logout current user.
-    Element is Visible    ${burger_menu['burger']}
-    Click    ${burger_menu['burger']}
-    Sleep    1
-    Element is Visible    ${burger_menu['logout']}
-    Click    ${burger_menu['logout']}
     
 Open New Browser
     [Documentation]    Open Browser and maximize it.
@@ -70,3 +50,12 @@ Complete Order
     [Documentation]    use in checkout page to complete an order.
     Element is Visible    ${finish_btn}
     Click    ${finish_btn}
+
+
+Logout
+    [Documentation]    use this keyword to logout current user.
+    Element is Visible    ${burger_menu['burger']}
+    Click    ${burger_menu['burger']}
+    Sleep    1
+    Element is Visible    ${burger_menu['logout']}
+    Click    ${burger_menu['logout']}

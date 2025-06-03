@@ -1,3 +1,19 @@
+*** Variables ***
+&{burger_menu}    burger=//div[@class="bm-burger-button"]    all-item=//*[.='All Items']    
+...    about=//*[.='About']    logout=//*[.='Logout']    reset_app=//*[.='Reset App State']
+
+${product_h}    //*[.='Products']
+${item_box}    //*[@class="inventory_item"][.//div[contains(@class,'inventory_item_name') and contains(.,'[ITEM_NAME]')]]
+
+${item_name}    //*[@class='inventory_item_name ']
+${item_desc}    //*[@class='inventory_item_desc']
+${item_price}    //*[@class='inventory_item_price']
+&{item_btn}    add=//button[contains(.,'Add')]    remove=//button[.='Remove']
+
+${product_sort}    //select[@class='product_sort_container']
+${active_product_sort}    //*[@class="active_option" and contains (.,'[SORT]')]
+${to_cart}    //a[@class='shopping_cart_link']
+
 *** Keywords ***
 Verify Items Price
     [Documentation]    Verify specific items price from product page, to check that the price tag is correct.
@@ -76,8 +92,8 @@ Sort Product Items
     END
 
 Verify Sorting Text
-    [Documentation]    to verify that text is visible on current time.
-    ...    only insert [az : 'A to Z' , za : 'Z to A' , lohi : 'Low to High', hilo : 'High to Low']
+    [Documentation]    to verify that sorting method is on the right track at current time.
+    ...    only input [az : 'A to Z' , za : 'Z to A' , lohi : 'Low to High', hilo : 'High to Low'] as ${text}
     [Arguments]    ${text}
 
     IF    '${text}' == 'az'
