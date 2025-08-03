@@ -1,35 +1,35 @@
 *** Variables ***
-${checkout_h}    //*[@class='title']
-${f_name_input}    id=first-name
-${l_name_input}    id=last-name
-${postal}    id=postal-code
-${continue}    id=continue
-${sum_total}    //*[@class="summary_subtotal_label"]
-${finish_btn}    id=finish
-${back_to_home_btn}    id=back-to-products
+${CHECKOUT_H}    //*[@class='title']
+${F_NAME_INTPUT}    id=first-name
+${L_NAME_INTPUT}    id=last-name
+${POSTAL}    id=postal-code
+${CONTINUE}    id=continue
+${SUM_TOTAL}    //*[@class="summary_subtotal_label"]
+${FINISH_BTN}    id=finish
+${BACK_TO_HOME_BTN}    id=back-to-products
 
 *** Keywords ***
 Fill Form
     [Documentation]    Fill form with Firstname , Lastname and postalcode then click continue
     [Arguments]    ${name}    ${surname}    ${postal_code}
-    common.Element is Visible    ${checkout_h}
-    Fill Text    ${f_name_input}    ${name}
-    Fill Text    ${l_name_input}    ${surname}
-    Fill Text    ${postal}    ${postal_code}
-    Click    ${continue}
+    common.Element is Visible    ${CHECKOUT_H}
+    Fill Text    ${F_NAME_INTPUT}    ${name}
+    Fill Text    ${L_NAME_INTPUT}    ${surname}
+    Fill Text    ${POSTAL}    ${postal_code}
+    Click    ${CONTINUE}
 
 Verify Total Price
     [Documentation]    to check that total price is correct and match the items.
     [Arguments]    ${expected_price}
     ${ex_price}    Convert To String    ${expected_price}
-    common.Element is Visible    ${sum_total} 
-    ${actual_price}    Get Text    ${sum_total}
+    common.Element is Visible    ${SUM_TOTAL} 
+    ${actual_price}    Get Text    ${SUM_TOTAL}
     Should Contain    ${actual_price}    ${ex_price}
 
 Verify Completed Order
     [Documentation]    Verify completed order then go back to home.
-    common.Element is Visible    ${checkout_h}
-    ${status}    Get Text    ${checkout_h}
+    common.Element is Visible    ${CHECKOUT_H}
+    ${status}    Get Text    ${CHECKOUT_H}
     Should Contain    ${status}    Complete
     Take Screenshot    EMBED
-    Click    ${back_to_home_btn}
+    Click    ${BACK_TO_HOME_BTN}

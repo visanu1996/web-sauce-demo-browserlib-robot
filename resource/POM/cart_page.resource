@@ -1,24 +1,24 @@
 *** Variables ***
-${count_cart_item}    //div[@class="cart_item"]    
-${cart_item}    //div[@class="cart_item"][.//*[contains(.,'[ITEM_NAME]')]]
-${cart_desc}    //div[@class='inventory_item_desc']
-${cart_name}    //div[@class='inventory_item_name']
-${cart_qty}    //div[@class="cart_quantity"]
-${cart_price}    //div[@class="inventory_item_price"]
+${COUNT_CART_ITEM}    //div[@class="cart_item"]    
+${CART_ITEM}    //div[@class="cart_item"][.//*[contains(.,'[ITEM_NAME]')]]
+${CART_DESC}    //div[@class='inventory_item_desc']
+${CART_NAME}    //div[@class='inventory_item_name']
+${CART_QTY}    //div[@class="cart_quantity"]
+${CART_PRICE}    //div[@class="inventory_item_price"]
 
-${cart_remove}    //button[.='Remove']
+${CART_REMOVE}    //button[.='Remove']
 
-${cart_h}    //*[@class="title"]
-${go_product}    id=continue-shopping
+${CART_H}    //*[@class="title"]
+${GO_PRODUCT}    id=continue-shoppings
 
-${checkout}    id=checkout
+${CHECKOUT}    id=checkout
 
 *** Keywords ***
 Check Cart Items
     [Documentation]    Get count of items in cart page.
     ...    This keyword is not use to get items qty.
     [Arguments]    ${total}
-    ${count}    Get Element Count    ${count_cart_item}
+    ${count}    Get Element Count    ${COUNT_CART_ITEM}
     Should Be Equal    '${count}'    '${total}'
     Log    Item in cart : ${count}
 
@@ -27,8 +27,8 @@ Remove Cart items
     [Arguments]    @{remove_item}
 
     FOR    ${item}    IN    @{remove_item}
-        ${cart_box}    common.Change Variable Text    ${cart_item}    [ITEM_NAME]    ${item}
-        Click    ${cart_box}${cart_remove}
+        ${cart_box}    common.Change Variable Text    ${CART_ITEM}    [ITEM_NAME]    ${item}
+        Click    ${cart_box}${CART_REMOVE}
         Sleep    1
         
     END
@@ -36,12 +36,12 @@ Remove Cart items
 Sum Total Price
     [Documentation]    sum the total amount of price in cart page.
     ${total_price}    Set Variable    ${0}
-    ${total_item}    Get Element Count    ${count_cart_item}
+    ${total_item}    Get Element Count    ${COUNT_CART_ITEM}
 
     FOR    ${counter}    IN RANGE    0    ${total_item}
 
         ${index}    Evaluate    ${counter}+1
-        ${price}    Get Text    xpath=(${count_cart_item}${cart_price})[${index}]
+        ${price}    Get Text    xpath=(${COUNT_CART_ITEM}${CART_PRICE})[${index}]
         ${reg_price}    Remove String Using Regexp    ${price}    [$]
         ${total_price}    Evaluate    ${total_price}+${reg_price}
         Sleep    1

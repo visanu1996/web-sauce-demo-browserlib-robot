@@ -13,17 +13,6 @@ Open New Browser
     New Context    viewport=${None}
     New Page    ${url}
 
-# No need to use in Browser Library because when you do something it will automatically move your view to that locator.
-# Scroll to Element if is not Visible
-#    [Documentation]    to scroll to element that are on the page but not Visible
-#    ${locator}
-#    ${is_onPage}    Wait For Elements State    ${locator}    state=attached
-#    ${is_visible}    Wait For Elements State    ${locator}    state=visible
-
-#    IF    ${is_onPage} and not ${is_visible}
-#        Scroll To    ${locator}
-#    END
-
 Change Variable Text
     [Documentation]    change variable text that match specific word.
     ...    Like [ITEM-NAME] to be another word such as Bike Light
@@ -38,13 +27,13 @@ Go to Cart Page
 
 Go to Product Page
     [Documentation]    use in cart page to go back to product page.
-    Element is Visible    ${go_product}
-    Click    ${go_product}
+    Element is Visible    ${GO_PRODUCT}
+    Click    ${GO_PRODUCT}
 
 Check Out Item
     [Documentation]    use in cart page to go to checkout page.
-    Element is Visible    ${checkout}
-    Click    ${checkout}
+    Element is Visible    ${CHECKOUT}
+    Click    ${CHECKOUT}
 
 Complete Order
     [Documentation]    use in checkout page to complete an order.

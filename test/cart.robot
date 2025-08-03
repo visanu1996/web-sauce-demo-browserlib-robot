@@ -7,7 +7,7 @@ TC1-Go to Cart Page
     [Documentation]    Verify that you're arrived at cart page.
     login_page.Login User    ${username['std']}    ${password}
     common.Go to Cart Page    
-    common.Element is Visible    ${cart_h}
+    common.Element is Visible    ${CART_H}
 
 TC2-Add Items
     [Documentation]    Add items then count item in cart
