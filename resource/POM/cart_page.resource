@@ -9,7 +9,7 @@ ${CART_PRICE}    //div[@class="inventory_item_price"]
 ${CART_REMOVE}    //button[.='Remove']
 
 ${CART_H}    //*[@class="title"]
-${GO_PRODUCT}    id=continue-shoppings
+${GO_PRODUCT}    id=continue-shopping
 
 ${CHECKOUT}    id=checkout
 

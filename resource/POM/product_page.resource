@@ -1,5 +1,5 @@
 *** Variables ***
-&{BURGUR_MENU}    BURGUR=//div[@class="bm-burger-button"]    ALL-ITEM=//*[.='All Items']    
+&{BURGER_MENU}    BURGER=//div[@class="bm-burger-button"]    ALL-ITEM=//*[.='All Items']    
 ...    ABOUT=//*[.='About']    LOGOUT=//*[.='Logout']    RESET_APP=//*[.='Reset App State']
 
 ${PRODUCT_H}    //*[.='Products']

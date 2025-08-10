@@ -43,8 +43,8 @@ Complete Order
 
 Logout
     [Documentation]    use this keyword to logout current user.
-    Element is Visible    ${burger_menu['burger']}
-    Click    ${burger_menu['burger']}
+    Element is Visible    ${BURGER_MENU['BURGER']}
+    Click    ${BURGER_MENU['BURGER']}
     Sleep    1
-    Element is Visible    ${burger_menu['logout']}
-    Click    ${burger_menu['logout']}
+    Element is Visible    ${BURGER_MENU['LOGOUT']}
+    Click    ${BURGER_MENU['LOGOUT']}
