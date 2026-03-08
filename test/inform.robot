@@ -17,4 +17,5 @@ TC2
     [Documentation]    completed order and verify completed page.
     common.Complete Order
     checkout_page.Verify Completed Order
+    Sleep    5
     Take Screenshot    EMBED
