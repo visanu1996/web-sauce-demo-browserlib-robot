@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ${CURDIR}/../import.robot
-Suite Setup    common.Open New Browser
+Test Setup    common.Open New Browser
+Test Teardown    Close Browser
 Documentation    Focus on testing login page.
 
 *** Test Cases ***
@@ -48,7 +49,6 @@ TC5
     common.Element is Visible    ${login_logo}
     login_page.Login User    ${username['std']}    ${password}
     Take Screenshot    EMBED
-    common.Logout
     Sleep    5
 
 TC6
@@ -56,5 +56,4 @@ TC6
     common.Element is Visible    ${login_logo}
     login_page.Login User    ${username['prb']}    ${password}
     Take Screenshot    EMBED
-    common.Logout
     Sleep    5
